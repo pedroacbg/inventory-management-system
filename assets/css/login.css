@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: url("../img/login-background.jpg") no-repeat fixed center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  height: 100%;
+  width: 100%;
+}
+
+.login-header {
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 160px;
+}
+
+.login-header h1 {
+  font-size: 100px;
+  font-weight: bold;
+  color: #f685a2;
+}
+
+.login-header p {
+  color: #ffdae3;
+  font-size: 50px;
+  margin: 0px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.login-header p:after {
+  content: "";
+  display: block;
+  height: 5px;
+  background: #f685a2;
+  margin: 0 auto;
+}
+
+.login-body form {
+  width: 450px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 50px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+}
+
+.login-input-container {
+  margin-top: 20px;
+}
+
+.login-input-container label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.login-input-container input {
+  height: 40px;
+  width: 100%;
+  border: 2px solid #d40339;
+  font-size: 20px;
+  padding: 5px;
+  text-align: center;
+}
+
+.login-button-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.login-button-container button {
+  width: 50%;
+  font-size: 30px;
+  padding: 10px 20px;
+  background: #f685a2;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
