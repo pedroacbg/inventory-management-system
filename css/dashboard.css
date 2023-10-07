@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+*:where(
+    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+  ) {
+  all: unset;
+  display: revert;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  font-family: "Roboto", sans-serif;
+}
+
+a,
+button {
+  cursor: revert;
+}
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+
+textarea {
+  white-space: revert;
+}
+
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+:where(pre) {
+  all: revert;
+  box-sizing: border-box;
+}
+
+::placeholder {
+  color: unset;
+}
+
+::marker {
+  content: initial;
+}
+
+:where([hidden]) {
+  display: none;
+}
+
+:where([contenteditable]:not([contenteditable="false"])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+:where(dialog:modal) {
+  all: revert;
+  box-sizing: border-box;
+}
+
+#dashboard {
+  display: flex;
+}
+
+.dashboard-sidebar {
+  width: 20%;
+  background: #323232;
+  height: 100vh;
+}
+
+.dashboard-content-container {
+  width: 80%;
+  background: #f4f6f9;
+}
+
+.dashboard-title {
+  font-size: 80px;
+  font-weight: bold;
+  color: #f685a1;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-sidebar-user {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #fff;
+}
+
+.dashboard-sidebar-user img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid #f685a1;
+  margin-right: 5px;
+}
+
+.dashboard-sidebar-user span {
+  font-size: 22px;
+  text-transform: uppercase;
+  color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.dashboard-menu-list {
+  margin-top: 20px;
+}
+
+.dashboard-menu-list li {
+  padding: 15px 15px;
+  text-transform: uppercase;
+}
+
+.dashboard-menu-list li a {
+  display: block;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.dashboard-menu-list li:hover {
+  background: #f685a1;
+  transition: all 0.3s ease;
+}
+
+.dashboard-menu-list li.menu-active {
+  background: #f685a1;
+}
+
+.dashboard-menu-list li a i {
+  padding-right: 10px;
+  font-size: 25px;
+}
+
+.dashboard-content-nav {
+  background: #fff;
+  padding: 20px;
+}
+
+.dashboard-content-nav a {
+  font-size: 20px;
+  color: #848383;
+}
+
+.dashboard-content-nav i {
+  padding-right: 10px;
+}
+
+#logout-btn {
+  float: right;
+}
+
+.dashboard-content {
+  padding: 50px 10px 10px 10px;
+}
+
+.dashboard-content-main {
+  background: #fff;
+  min-height: 80vh;
+  height: 100%;
+}
