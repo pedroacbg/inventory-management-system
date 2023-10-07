@@ -95,3 +95,11 @@ body {
   text-transform: uppercase;
   cursor: pointer;
 }
+
+.error-message {
+  background: #fff;
+  text-align: center;
+  color: red;
+  font-size: 20px;
+  padding: 11px;
+}

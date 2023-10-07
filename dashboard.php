@@ -1,14 +1,23 @@
+<?php 
+  // Start the session.
+  session_start();
+  if(!isset($_SESSION['user'])) header('location: login.php');
+
+  $user = $_SESSION['user'];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="../css/dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css" />
     <script
       src="https://kit.fontawesome.com/e1279f9b9d.js"
       crossorigin="anonymous"
     ></script>
-    <script defer src="../js/index.js"></script>
+    <script defer type="text/javascript" src="js/index.js"></script>
     <title>IMS Dashboard - Inventory Management System</title>
   </head>
   <body>
@@ -17,11 +26,11 @@
         <h3 class="dashboard-title">IMS</h3>
         <div class="dashboard-sidebar-user">
           <img
-            src="../assets/img/user/calabreso.png"
+            src="assets/img/user/calabreso.png"
             alt="User image"
             class="user-image"
           />
-          <span class="user-name">Calabreso</span>
+          <span class="user-name"><?= $user['first_name'] . ' ' . $user['last_name'] ?></span>
         </div>
         <div class="dashboard-sidebar-menus">
           <ul class="dashboard-menu-list">
@@ -67,7 +76,7 @@
       <div class="dashboard-content-container">
         <div class="dashboard-content-nav">
           <a href="" id="toggle-btn"><i class="fa-solid fa-bars"></i></a>
-          <a href="" id="logout-btn"
+          <a href="database/logout.php" id="logout-btn"
             ><i class="fa-solid fa-power-off"></i>Log-out</a
           >
         </div>
