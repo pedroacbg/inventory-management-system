@@ -184,10 +184,73 @@ meter {
 
 .dashboard-content {
   padding: 50px 10px 10px 10px;
+  position: relative;
 }
 
 .dashboard-content-main {
   background: #fff;
   min-height: 80vh;
   height: 100%;
+  left: 50%;
+}
+
+.app-form {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #cecfd0;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  background: #f4f6f9;
+}
+
+.app-form-input {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #858486;
+  border-radius: 4px;
+  padding: 8px;
+  color: #848383;
+  margin-top: 5px;
+}
+
+.app-form-input:focus {
+  border: 1px solid #2c2c2c;
+}
+
+.app-form-container label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.app-form-container {
+  margin-bottom: 15px;
+}
+
+.app-form-btn {
+  border: 1px solid #fff;
+  background: #f685a1;
+  color: #fff;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+
+p.response-message {
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+}
+
+p.response-message--error {
+  background: rgba(128, 0, 0, 0.1);
+}
+
+p.response-message--success {
+  background: rgba(0, 128, 0, 0.1);
 }
