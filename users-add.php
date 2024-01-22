@@ -69,7 +69,6 @@ $users = include('database/show-users.php');
               <h1 class="column-title"><i class="fa-solid fa-list"></i> List of Users</h1>
               <div class="section-content">
                 <div class="users">
-                  <p class="user-count"><?= count($users) ?> Users</p>
                   <table>
                     <thead>
                       <tr>
@@ -79,6 +78,7 @@ $users = include('database/show-users.php');
                         <th>Email</th>
                         <th>Created At</th>
                         <th>Updated At</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -90,10 +90,15 @@ $users = include('database/show-users.php');
                           <td><?= $user['email'] ?></td>
                           <td><?= date('M d, Y @ H:i:s', strtotime($user['created_at'])) ?></td>
                           <td><?= date('M d, Y @ H:i:s', strtotime($user['updated_at'])) ?></td>
+                          <td>
+                            <a href=""><i class="fa fa-pencil"></i>Edit</a>
+                            <a href="" class="delete-user" data-userid="<?= $user['id'] ?>" data-name="<?= $user['first_name'] ?>" data-lastname="<?= $user['last_name'] ?>"><i class="fa fa-trash"></i>Delete</a>
+                          </td>
                         </tr>
                       <?php } ?>
                     </tbody>
                   </table>
+                  <p class="user-count"><?= count($users) ?> Users</p>
                 </div>
               </div>
             </div>
@@ -102,6 +107,54 @@ $users = include('database/show-users.php');
       </div>
     </div>
   </div>
+  <script src="js/index.js"></script>
+  <script src="js/jquery/jquery-3.7.1.min.js"></script>
+  <script>
+    function script() {
+      this.initialize = function() {
+          this.registerEvents();
+        },
+
+        this.registerEvents = function() {
+          document.addEventListener('click', function(e) {
+            targetElement = e.target;
+            classList = targetElement.classList;
+            if (classList.contains('delete-user')) {
+              e.preventDefault();
+              userId = targetElement.dataset.userid;
+              firstname = targetElement.dataset.name;
+              lastname = targetElement.dataset.lastname;
+              fullname = firstname + ' ' + lastname;
+
+              if (window.confirm('Are you sure to delete ' + fullname + '?')) {
+                $.ajax({
+                  method: 'POST',
+                  data: {
+                    user_id: userId,
+                    first_name: firstname,
+                    last_name: lastname
+                  },
+                  url: 'database/delete-user.php',
+                  dataType: 'json',
+                  success: function(data) {
+                    if (data.success) {
+                      if (window.confirm(data.message)) {
+                        location.reload();
+                      }
+                    } else {
+                      window.alert(data.message);
+                    }
+                  }
+                });
+              }
+            }
+          });
+        }
+    };
+
+    var script = new script();
+    script.initialize();
+  </script>
 </body>
 
 </html>

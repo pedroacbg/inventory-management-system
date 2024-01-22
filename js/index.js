@@ -1,13 +1,13 @@
-const button = document.getElementById("toggle-btn");
-const dashboardMain = document.querySelector(".dashboard-content-container");
-const title = document.querySelector(".dashboard-title");
-const sidebar = document.querySelector(".dashboard-sidebar");
-const userImg = document.querySelector(".user-image");
-const username = document.querySelector(".user-name");
-const menuText = document.getElementsByClassName("menu-text");
-const menuList = document.getElementsByClassName("dashboard-menu-list");
+var button = document.getElementById("toggle-btn");
+var dashboardMain = document.querySelector(".dashboard-content-container");
+var title = document.querySelector(".dashboard-title");
+var sidebar = document.querySelector(".dashboard-sidebar");
+var userImg = document.querySelector(".user-image");
+var username = document.querySelector(".user-name");
+var menuText = document.getElementsByClassName("menu-text");
+var menuList = document.getElementsByClassName("dashboard-menu-list");
 
-let sideBarIsOpen = true;
+var sideBarIsOpen = true;
 
 button.addEventListener("click", (event) => {
   event.preventDefault();
